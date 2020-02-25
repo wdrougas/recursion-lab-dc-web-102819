@@ -40,3 +40,21 @@ function addUpTo(index, array) {
         return array[index]
     }
 }
+
+function maxOf(array) {
+    if (array.length === 1) {
+        return array[0]
+    } else {
+        return Math.max(array.pop(), maxOf(array))
+    }
+}
+
+function includesNumber(array, num) {
+    if (!array.length) {
+        return false
+    } else if (array[0] === num) {
+        return true
+    } else {
+        return includesNumber(array.slice(1), num)
+    }
+}
